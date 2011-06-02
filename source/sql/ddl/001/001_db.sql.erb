@@ -1,0 +1,17 @@
+USE [master]
+GO
+<% 
+    def catalog_path_file(file_type)
+      "#{configatron.db.database_path}\#{configatron.db.initial_catalog}.#{file_type}"
+    end
+%>
+
+IF EXISTS(SELECT * FROM Sysdatabases WHERE NAME LIKE '<%= configatron.db.initial_catalog %>')
+  DROP DATABASE [<%= configatron.db.initial_catalog %>]
+  GO
+
+CREATE DATABASE [<%= configatron.db.initial_catalog %>] ON  PRIMARY 
+( NAME = N'<%= catalog_path_file("ldf")%>', FILENAME = N'<%= catalog_path_file("mdf") %>' , SIZE = 2240KB , MAXSIZE = UNLIMITED, FILEGROWTH = 1024KB )
+ LOG ON 
+( NAME = N'<%= configatron.db.initial_catalog %>_log', FILENAME = N'<%= File.join(configatron.db.database_path,"#{configatron.db.initial_catalog}.ldf")%>', SIZE = 768KB , MAXSIZE = 2048GB , FILEGROWTH = 10%)
+GO

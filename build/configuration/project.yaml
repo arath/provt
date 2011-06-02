@@ -1,0 +1,8 @@
+project: provident
+target: Debug
+source_dir: source
+artifacts_dir: artifacts
+config_dir: source/config
+app_dir: source/provident.win.ui
+log_file_name: provident_log.txt
+log_level: DEBUG

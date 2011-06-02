@@ -1,0 +1,8 @@
+db:  
+  database_path: C:\tempfiles\db 
+  osql_path: C:/Program Files/Microsoft Sql Server/100/Tools/Binn
+  osql_exe: osql.exe
+  scripts_path: C:/users/jp/repositories/github/dwp/provident/source/sql
+  database_provider: System.Data.SqlClient
+  web_user_account: NT Authority\\Network Service
+  osql_args_prior_to_file_name: -b -i
