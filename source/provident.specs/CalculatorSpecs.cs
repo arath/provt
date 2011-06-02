@@ -5,6 +5,7 @@ using developwithpassion.specifications.extensions;
 
 namespace provident.specs
 {
+  [Subject(typeof(Calculator))]
   public class CalculatorSpecs
   {
     public abstract class concern : Observes<Calculator>
