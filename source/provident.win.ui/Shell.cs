@@ -1,4 +1,5 @@
 ﻿using System.Windows.Forms;
+using provident.utility.logging;
 
 namespace provident.win.ui
 {
@@ -7,6 +8,7 @@ namespace provident.win.ui
     public Shell()
     {
       InitializeComponent();
+      Log.an.informational("Hello");
     }
   }
 }

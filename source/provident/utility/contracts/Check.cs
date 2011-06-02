@@ -1,20 +1,17 @@
 using System;
-using System.Linq;
 
 namespace provident.utility.contracts
 {
   public class Check
   {
-    public static void true_for_all<T>(Func<T,bool> condition,params T[] values)
+    public static ConstraintGatewayResolver gateway_resolver = () =>
     {
-      if (values.All(condition)) return;
-      throw new ArgumentException("Not all the values match the condition");
-    }
+      throw new NotImplementedException("This needs to be configured at application startup");
+    };
 
-    public static void ensure_not_null<T>(T value) where T : class
+    public static IVerifyContracts that
     {
-      if (value != null) return;
-      throw new ArgumentException("This should not be null");
+      get { return gateway_resolver();}
     }
   }
 }

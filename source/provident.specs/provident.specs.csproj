@@ -108,8 +108,12 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CalculatorSpecs.cs" />
-    <Compile Include="MessageGeneratorSpecs.cs" />
+    <Compile Include="CheckSpecs.cs" />
+    <Compile Include="ConstraintGatewaySpecs.cs" />
+    <Compile Include="ContainerSpecs.cs" />
+    <Compile Include="LogSpecs.cs" />
+    <Compile Include="TextWriterLoggerFactorySpecs.cs" />
+    <Compile Include="TextWriterLoggerSpecs.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
