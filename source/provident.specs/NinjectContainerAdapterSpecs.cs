@@ -1,38 +1,25 @@
- using System;
- using System.Collections.Generic;
- using System.Data;
- using System.Data.SqlClient;
- using System.Reflection;
- using Machine.Specifications;
- using developwithpassion.specifications.rhinomocks;
- using developwithpassion.specifications.extensions;
- using Ninject;
- using Ninject.Activation;
- using Ninject.Activation.Blocks;
- using Ninject.Components;
- using Ninject.Modules;
- using Ninject.Parameters;
- using Ninject.Planning.Bindings;
- using Ninject.Syntax;
- using provident.utility.containers;
- using provident.utility.containers.ninject;
+using developwithpassion.specifications.extensions;
+using developwithpassion.specifications.rhinomocks;
+using Machine.Specifications;
+using Ninject;
+using provident.utility.containers;
+using provident.utility.containers.ninject;
 
 namespace provident.specs
-{  
-  [Subject(typeof(NinjectContainerAdapter))]  
+{
+  [Subject(typeof(NinjectContainerAdapter))]
   public class NinjectContainerAdapterSpecs
   {
     public abstract class concern : Observes<IResolveDependencies,
                                       NinjectContainerAdapter>
     {
-        
     }
-
 
     public class when_resolving_a_dependency : concern
     {
       Establish c = () =>
       {
+        the_kernel = new StandardKernel();
         the_kernel.Bind<IAmAContract>().To<SomeType>();
         depends.on(the_kernel);
       };
@@ -50,8 +37,8 @@ namespace provident.specs
 
   public interface IAmAContract
   {
-    
   }
+
   public class SomeType : IAmAContract
   {
   }
