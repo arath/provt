@@ -1,7 +1,6 @@
-using Machine.Specifications;
 using developwithpassion.specifications.rhinomocks;
-using developwithpassion.specifications.extensions;
-using provident.utility.container;
+using Machine.Specifications;
+using provident.utility.containers;
 
 namespace provident.specs
 {
@@ -10,7 +9,6 @@ namespace provident.specs
   {
     public abstract class concern : Observes
     {
-
     }
 
     public class when_requesting_container_services : concern
@@ -22,6 +20,7 @@ namespace provident.specs
         ContainerResolver resolver = () => the_underlying_container;
 
         spec.change(() => Container.container_resolver).to(resolver);
+
       };
 
       Because b = () =>
@@ -30,9 +29,9 @@ namespace provident.specs
       It should_provide_access_to_the_underlying_container = () =>
         result.ShouldEqual(the_underlying_container);
 
-
       static IResolveDependencies result;
       static IResolveDependencies the_underlying_container;
     }
   }
+
 }

@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Windows.Forms;
-using provident.utility.logging;
-using provident.utility.logging.basic;
+using provident.tasks.startup;
 
 namespace provident.win.ui
 {
@@ -10,10 +8,7 @@ namespace provident.win.ui
     [STAThread]
     static void Main()
     {
-      Application.EnableVisualStyles();
-      Application.SetCompatibleTextRenderingDefault(true);
-      Log.logger_factory_resolver = () => new TextWriterLoggerFactory(() => Console.Out);
-      Application.Run(new Shell());
+      StartUp.the_application();
     }
   }
 }

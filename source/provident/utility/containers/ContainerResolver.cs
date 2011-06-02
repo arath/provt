@@ -1,4 +1,4 @@
-namespace provident.utility.container
+namespace provident.utility.containers
 {
   public delegate IResolveDependencies ContainerResolver();
 }

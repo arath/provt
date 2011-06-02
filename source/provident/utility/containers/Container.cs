@@ -1,6 +1,6 @@
 using System;
 
-namespace provident.utility.container
+namespace provident.utility.containers
 {
   public class Container
   {
@@ -11,7 +11,7 @@ namespace provident.utility.container
 
     public static IResolveDependencies resolve
     {
-      get { throw new NotImplementedException(); }
+      get { return container_resolver();}
     }
   }
 }

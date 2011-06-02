@@ -51,13 +51,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Ninject">
+      <HintPath>..\..\packages\ninject.2.2.0.0\Ninject.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -77,12 +82,25 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="utility\container\Container.cs" />
-    <Compile Include="utility\container\ContainerResolver.cs" />
-    <Compile Include="utility\container\IResolveDependencies.cs" />
+    <Compile Include="Shell.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shell.Designer.cs">
+      <DependentUpon>Shell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tasks\startup\Start.cs" />
+    <Compile Include="tasks\startup\StartUp.cs" />
+    <Compile Include="tasks\startup\steps\ApplyingVisualStyling.cs" />
+    <Compile Include="tasks\startup\steps\ConfigureNinject.cs" />
+    <Compile Include="tasks\startup\steps\ConfiguringCoreServices.cs" />
+    <Compile Include="tasks\startup\steps\HookupGlobalExceptionHandling.cs" />
+    <Compile Include="tasks\startup\steps\Launch.cs" />
+    <Compile Include="utility\containers\Container.cs" />
+    <Compile Include="utility\containers\ContainerResolver.cs" />
+    <Compile Include="utility\containers\IResolveDependencies.cs" />
+    <Compile Include="utility\containers\ninject\NinjectContainerAdapter.cs" />
     <Compile Include="utility\contracts\Check.cs" />
     <Compile Include="utility\contracts\ConstraintGateway.cs" />
-    <Compile Include="utility\contracts\ConstraintGatewayResolver.cs" />
     <Compile Include="utility\contracts\ContractViolationException.cs" />
     <Compile Include="utility\contracts\IVerifyContracts .cs" />
     <Compile Include="utility\EnumerableExtensions.cs" />
@@ -92,7 +110,11 @@
     <Compile Include="utility\logging\ICreateLoggers.cs" />
     <Compile Include="utility\logging\ILogMessages.cs" />
     <Compile Include="utility\logging\Log.cs" />
-    <Compile Include="utility\logging\LoggerFactoryResolver .cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Shell.resx">
+      <DependentUpon>Shell.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

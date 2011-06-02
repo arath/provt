@@ -1,5 +1,6 @@
 using developwithpassion.specifications.rhinomocks;
 using Machine.Specifications;
+using provident.specs.utility;
 using provident.utility.contracts;
 
 namespace provident.specs
@@ -17,9 +18,7 @@ namespace provident.specs
       {
         the_constraint_gateway = fake.an<IVerifyContracts>();
 
-        ConstraintGatewayResolver resolver = () => the_constraint_gateway;
-
-        spec.change(() => Check.gateway_resolver).to(resolver);
+        Scaffold.container_returned(the_constraint_gateway,pipeline, fake);
       };
 
       Because b = () =>

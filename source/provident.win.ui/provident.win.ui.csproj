@@ -52,12 +52,6 @@
     <Compile Include="catalog\ProductsView.Designer.cs">
       <DependentUpon>ProductsView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Shell.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Shell.Designer.cs">
-      <DependentUpon>Shell.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="catalog\ProductsView.resx">
@@ -72,9 +66,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Shell.resx">
-      <DependentUpon>Shell.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

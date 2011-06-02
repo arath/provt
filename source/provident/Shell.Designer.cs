@@ -1,4 +1,4 @@
-﻿namespace provident.win.ui {
+﻿namespace provident {
   partial class Shell {
     /// <summary>
     /// Required designer variable.

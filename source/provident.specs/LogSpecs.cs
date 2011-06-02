@@ -1,6 +1,7 @@
 using developwithpassion.specifications.extensions;
 using developwithpassion.specifications.rhinomocks;
 using Machine.Specifications;
+using provident.specs.utility;
 using provident.utility.logging;
 
 namespace provident.specs
@@ -19,9 +20,9 @@ namespace provident.specs
         the_logger = fake.an<ILogMessages>();
         logger_factory = fake.an<ICreateLoggers>();
 
-        LoggerFactoryResolver resolver = () => logger_factory;
 
-        spec.change(() => Log.logger_factory_resolver).to(resolver);
+        Scaffold.container_returned(logger_factory,pipeline,fake);
+
 
         logger_factory.setup(x => x.create_logger_bound_to(typeof(when_accessing_logging_services)))
           .Return(the_logger);
