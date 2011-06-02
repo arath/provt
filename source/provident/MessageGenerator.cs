@@ -1,4 +1,4 @@
-﻿namespace nothinbutdotnetstore
+﻿namespace provident
 {
     public class MessageGenerator
     {

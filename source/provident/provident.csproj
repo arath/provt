@@ -77,6 +77,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Calculator.cs" />
     <Compile Include="MessageGenerator.cs" />
     <Compile Include="utility\EnumerableExtensions.cs" />
     <Compile Include="utility\filtering\AndCriteria.cs" />
