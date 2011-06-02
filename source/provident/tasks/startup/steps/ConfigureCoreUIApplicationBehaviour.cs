@@ -1,6 +1,6 @@
 namespace provident.tasks.startup.steps
 {
-  public class ApplyingVisualStyling
+  public class ConfigureCoreUIApplicationBehaviour
   {
     
   }

@@ -12,7 +12,7 @@ namespace provident.tasks.startup
       new ConfigureNinject().run();
 
       Start.by<ConfiguringCoreServices>()
-        .followed_by<ApplyingVisualStyling>()
+        .followed_by<ConfigureCoreUIApplicationBehaviour>()
         .followed_by<HookupGlobalExceptionHandling>()
         .end_with<Launch<Shell>>();
 

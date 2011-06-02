@@ -90,7 +90,7 @@
     </Compile>
     <Compile Include="tasks\startup\Start.cs" />
     <Compile Include="tasks\startup\StartUp.cs" />
-    <Compile Include="tasks\startup\steps\ApplyingVisualStyling.cs" />
+    <Compile Include="tasks\startup\steps\ConfigureCoreUIApplicationBehaviour.cs" />
     <Compile Include="tasks\startup\steps\ConfigureNinject.cs" />
     <Compile Include="tasks\startup\steps\ConfiguringCoreServices.cs" />
     <Compile Include="tasks\startup\steps\HookupGlobalExceptionHandling.cs" />
