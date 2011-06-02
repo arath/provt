@@ -50,11 +50,16 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="build.bat" />
+    <None Include="build\configuration\project.yaml" />
     <None Include="docs\conventions.markdown" />
     <None Include="fetch_latest" />
     <None Include="push" />
     <None Include="push_latest_work.ps1" />
     <None Include="rakefile.rb" />
+    <None Include="source\config\app.config.erb" />
+    <None Include="source\config\hibernate.cfg.xml.erb" />
+    <None Include="source\config\log4net.config.xml.erb" />
+    <None Include="source\config\our_custom_settings.txt.erb" />
     <None Include="start_new_exercise.ps1" />
   </ItemGroup>
   <ItemGroup>
@@ -77,10 +82,7 @@
   <ItemGroup>
     <Reference Include="System" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="build\" />
-    <Folder Include="source\config\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include=".gitignore" />
   </ItemGroup>
