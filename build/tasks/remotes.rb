@@ -1,5 +1,5 @@
-desc "Sets up the remotes to jp"
+desc "Set up the remote link to JP's repository"
 task :remotes do
   `git remote rm jp`
-  `git remote add jp git://github.com/developwithpassion/prov.git`
+  `git remote add jp git://github.com/developwithpassion/provt.git`
 end
