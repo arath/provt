@@ -4,7 +4,7 @@ using provident.utility.containers.ninject;
 
 namespace provident.tasks.startup.steps
 {
-  public class ConfigureNinject : IRunAStartupStep
+  public class ConfigureNinject
   {
     ICreateNinjectItems ninject_factory;
 

@@ -3,7 +3,7 @@ using provident.utility.containers;
 
 namespace provident.tasks.startup.steps
 {
-  public class Launch<TMainShell>: IRunAStartupStep where TMainShell : Form
+  public class Launch<TMainShell>: IAmTheFinalStepInStartup where TMainShell : Form
   {
     IResolveDependencies container;
 

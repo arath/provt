@@ -1,5 +1,5 @@
-using System;
 using System.Collections.Generic;
+using provident.tasks.startup.steps;
 using provident.utility;
 using provident.utility.containers;
 
@@ -11,6 +11,15 @@ namespace provident.tasks.startup
     {
       return new StartupPiplineBuilder(Container.resolve.an<TStartupCommand>(),
                                        Container.resolve);
+    }
+
+    public static void by_running_all_registered_startup_steps()
+    {
+      new ConfigureNinject().run();
+      Container.resolve.all<IRunAStartupStep>().for_each(x => x.run());
+
+      Container.resolve.an<IAmTheFinalStepInStartup>().run();
+      Container.resolve.an<ConfigureSomeTracks>().run();
     }
   }
 

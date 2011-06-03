@@ -14,8 +14,7 @@ namespace provident.specs
   [Subject(typeof(ConfigureNinject))]
   public class ConfigureNinjectSpecs
   {
-    public abstract class concern : Observes<IRunAStartupStep,
-                                      ConfigureNinject>
+    public abstract class concern : Observes<ConfigureNinject>
     {
     }
 

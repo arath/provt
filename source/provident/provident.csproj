@@ -51,6 +51,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Castle.Core">
+      <HintPath>..\..\packages\Castle.Core.2.5.2\lib\NET35\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentNHibernate">
+      <HintPath>..\..\packages\FluentNHibernate.1.2.0.712\lib\FluentNHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections">
+      <HintPath>..\..\packages\Iesi.Collections.3.1.0.4000\lib\Net35\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>..\..\packages\NHibernate.3.1.0.4000\lib\Net35\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.ByteCode.Castle">
+      <HintPath>..\..\packages\NHibernate.Castle.3.1.0.4000\lib\Net35\NHibernate.ByteCode.Castle.dll</HintPath>
+    </Reference>
     <Reference Include="Ninject">
       <HintPath>..\..\packages\ninject.2.2.0.0\Ninject.dll</HintPath>
     </Reference>
@@ -82,22 +97,32 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IGreetTheUser.cs" />
+    <Compile Include="ITweakUI.cs" />
+    <Compile Include="model\Spot.cs" />
+    <Compile Include="SayHello.cs" />
     <Compile Include="Shell.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Shell.Designer.cs">
       <DependentUpon>Shell.cs</DependentUpon>
     </Compile>
+    <Compile Include="tasks\IPersistFormPositionInformation.cs" />
     <Compile Include="tasks\startup\dependency_binding\LoggingModule.cs" />
+    <Compile Include="tasks\startup\dependency_binding\PersistenceModule.cs" />
     <Compile Include="tasks\startup\dependency_binding\StartupStepsModule.cs" />
     <Compile Include="tasks\startup\dependency_binding\ViewsModule.cs" />
     <Compile Include="tasks\startup\IRunAStartupStep.cs" />
+    <Compile Include="tasks\startup\RegisterAsSingleton.cs" />
     <Compile Include="tasks\startup\Start.cs" />
     <Compile Include="tasks\startup\StartUp.cs" />
+    <Compile Include="tasks\startup\steps\ConfigureSomeTracks.cs" />
     <Compile Include="tasks\startup\steps\ConfigureWindowsApplicationBehaviour.cs" />
     <Compile Include="tasks\startup\steps\ConfigureNinject.cs" />
     <Compile Include="tasks\startup\steps\HookupGlobalExceptionHandling.cs" />
     <Compile Include="tasks\startup\steps\Launch.cs" />
+    <Compile Include="tasks\startup\steps\ConfigureNhibernate.cs" />
+    <Compile Include="tasks\startup\steps\UIBehaviours.cs" />
     <Compile Include="ui\ProgramLoop.cs" />
     <Compile Include="utility\containers\Container.cs" />
     <Compile Include="utility\containers\ContainerResolver.cs" />
@@ -122,7 +147,9 @@
       <DependentUpon>Shell.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

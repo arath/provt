@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Ninject;
 
 namespace provident.utility.containers.ninject
@@ -14,6 +15,11 @@ namespace provident.utility.containers.ninject
     public TDependency an<TDependency>()
     {
       return kernel.Get<TDependency>();
+    }
+
+    public IEnumerable<TDependency> all<TDependency>()
+    {
+      return kernel.GetAll<TDependency>();
     }
   }
 }

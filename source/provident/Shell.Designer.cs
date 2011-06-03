@@ -59,7 +59,6 @@
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(735, 565);
       this.Controls.Add(this.ux_main_menu);
-      this.IsMdiContainer = true;
       this.MainMenuStrip = this.ux_main_menu;
       this.Name = "Shell";
       this.Text = "Provident";
