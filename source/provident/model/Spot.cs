@@ -24,7 +24,7 @@ namespace provident.model
 
     public virtual string name { get; set; }
 
-    IList<Spot> spots { get; set; }
+    public virtual IList<Spot> spots { get; set; }
 
     public Track()
     {

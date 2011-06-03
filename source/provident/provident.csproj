@@ -99,6 +99,7 @@
   <ItemGroup>
     <Compile Include="IGreetTheUser.cs" />
     <Compile Include="ITweakUI.cs" />
+    <Compile Include="Mapping\SpotMap.cs" />
     <Compile Include="model\Spot.cs" />
     <Compile Include="SayHello.cs" />
     <Compile Include="Shell.cs">
