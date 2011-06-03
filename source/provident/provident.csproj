@@ -88,17 +88,23 @@
     <Compile Include="Shell.Designer.cs">
       <DependentUpon>Shell.cs</DependentUpon>
     </Compile>
+    <Compile Include="tasks\startup\dependency_binding\LoggingModule.cs" />
+    <Compile Include="tasks\startup\dependency_binding\StartupStepsModule.cs" />
+    <Compile Include="tasks\startup\dependency_binding\ViewsModule.cs" />
+    <Compile Include="tasks\startup\IRunAStartupStep.cs" />
     <Compile Include="tasks\startup\Start.cs" />
     <Compile Include="tasks\startup\StartUp.cs" />
-    <Compile Include="tasks\startup\steps\ConfigureCoreUIApplicationBehaviour.cs" />
+    <Compile Include="tasks\startup\steps\ConfigureWindowsApplicationBehaviour.cs" />
     <Compile Include="tasks\startup\steps\ConfigureNinject.cs" />
-    <Compile Include="tasks\startup\steps\ConfiguringCoreServices.cs" />
     <Compile Include="tasks\startup\steps\HookupGlobalExceptionHandling.cs" />
     <Compile Include="tasks\startup\steps\Launch.cs" />
+    <Compile Include="ui\ProgramLoop.cs" />
     <Compile Include="utility\containers\Container.cs" />
     <Compile Include="utility\containers\ContainerResolver.cs" />
     <Compile Include="utility\containers\IResolveDependencies.cs" />
+    <Compile Include="utility\containers\ninject\IConfigureANinjectKernel.cs" />
     <Compile Include="utility\containers\ninject\NinjectContainerAdapter.cs" />
+    <Compile Include="utility\containers\ninject\public class Factories.cs" />
     <Compile Include="utility\contracts\Check.cs" />
     <Compile Include="utility\contracts\ConstraintGateway.cs" />
     <Compile Include="utility\contracts\ContractViolationException.cs" />
@@ -116,6 +122,7 @@
       <DependentUpon>Shell.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

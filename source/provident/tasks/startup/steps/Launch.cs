@@ -1,9 +1,21 @@
 using System.Windows.Forms;
+using provident.utility.containers;
 
 namespace provident.tasks.startup.steps
 {
-  public class Launch<TTheMainShell> where TTheMainShell : Form
+  public class Launch<TMainShell>: IRunAStartupStep where TMainShell : Form
   {
-    
+    IResolveDependencies container;
+
+    public Launch(IResolveDependencies container)
+    {
+      this.container = container;
+    }
+
+    public void run()
+    {
+      UIBehaviours.main_loop(container.an<TMainShell>());
+    }
   }
+
 }

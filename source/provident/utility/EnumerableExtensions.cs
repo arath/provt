@@ -1,20 +1,13 @@
+using System;
 using System.Collections.Generic;
 
 namespace provident.utility
 {
   public static class EnumerableExtensions
   {
-    public static IEnumerable<T> one_at_a_time<T>(this IEnumerable<T> items)
+    public static void for_each<T>(this IEnumerable<T> items,Action<T> visitor)
     {
-      foreach (var item in items) yield return item;
-    }
-
-    public static IEnumerable<TItemToSort> sort_using<TItemToSort>(this IEnumerable<TItemToSort> items,
-                                                                   IComparer<TItemToSort> comparer)
-    {
-      var sorted = new List<TItemToSort>(items);
-      sorted.Sort(comparer);
-      return sorted;
+      foreach (var item in items) visitor(item);
     }
   }
 }

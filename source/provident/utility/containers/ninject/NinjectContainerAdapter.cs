@@ -4,7 +4,7 @@ namespace provident.utility.containers.ninject
 {
   public class NinjectContainerAdapter : IResolveDependencies
   {
-    IKernel kernel;
+    public IKernel kernel;
 
     public NinjectContainerAdapter(IKernel kernel)
     {
